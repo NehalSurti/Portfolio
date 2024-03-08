@@ -1,0 +1,12 @@
+#logo {
+  color: var(--theme-color);
+  height: 100%;
+  width: 100%;
+  fill: none;
+  text {
+    fill: var(--theme-color);
+  }
+  path {
+    stroke: var(--theme-color);
+  }
+}
