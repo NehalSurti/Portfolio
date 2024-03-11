@@ -1,17 +1,15 @@
 import Image from "next/image";
-import styles from "./page.module.css";
-import Navbar from "@/sections/Navbar";
-import SocialIcons from "@/components/SocialIcons";
-import Email from "@/components/Email";
+// import styles from "./page.module.css";
 import Hero from "@/sections/Hero";
+import About from "@/sections/About";
+import Experience from "@/sections/Experience";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Navbar></Navbar>
+    <main>
       <Hero></Hero>
-      <SocialIcons></SocialIcons>
-      <Email></Email>
+      <About></About>
+      <Experience></Experience>
     </main>
   );
 }

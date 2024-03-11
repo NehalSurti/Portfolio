@@ -1,12 +1,13 @@
 import Button from "@/components/Button";
 import Link from "next/link";
 import React from "react";
+
 // import { motion } from "framer-motion";
 function Hero() {
   return (
     <div className="hero">
       <h1 className="hero-title">Hi my name is</h1>
-      <h2 className="hero-title-large">Kishan Sheth.</h2>
+      <h2 className="hero-title-large">Nehal Surti.</h2>
       <h3 className="hero-title-large hero-title-sub">
         I craft things for the web.
       </h3>

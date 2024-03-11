@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 // import "./globals.css";
 import "@/scss/index.scss";
+import Navbar from "@/sections/Navbar";
+import SocialIcons from "@/components/SocialIcons";
+import Email from "@/components/Email";
 import { Raleway, Fira_Code } from "next/font/google";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -33,7 +36,10 @@ export default function RootLayout({
       <body
       // className={inter.className}
       >
+        <Navbar></Navbar>
+        <SocialIcons></SocialIcons>
         {children}
+        <Email></Email>
       </body>
     </html>
   );
