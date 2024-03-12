@@ -8,3 +8,8 @@ body {
   background-color: var(--background-color);
   counter-reset: title;
 }
+
+html,
+body {
+  scroll-behavior: smooth !important;
+}
