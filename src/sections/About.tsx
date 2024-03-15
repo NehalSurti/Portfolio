@@ -2,16 +2,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-// import { useInView, motion } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 
 function About() {
   const ref = useRef(null);
-  //   const isInView = useInView(ref);
-  //   useEffect(() => {
-  //     console.log("Element is in view: ", isInView);
-  //   }, [isInView]);
+  const isInView = useInView(ref);
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+  }, [isInView]);
   return (
-    <div className="about" id="about">
+    <motion.div
+      className="about"
+      ref={ref}
+      id="about"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      variants={{
+        visible: { opacity: 1, y: -50 },
+        hidden: { opacity: 0, y: 0 },
+      }}
+    >
       <div className="title">
         <h2>About Me</h2>
       </div>
@@ -71,7 +83,7 @@ function About() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
