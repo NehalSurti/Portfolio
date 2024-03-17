@@ -63,7 +63,7 @@ function Navbar() {
             ease: "easeInOut",
           }}
         >
-          <Link href="">
+          <Link href="http://localhost:3000">
             <Logo></Logo>
           </Link>
         </motion.div>

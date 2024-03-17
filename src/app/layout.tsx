@@ -1,13 +1,15 @@
+"use client";
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
 // import "./globals.css";
 import "@/scss/index.scss";
 import Navbar from "@/sections/Navbar";
 import SocialIcons from "@/components/SocialIcons";
 import Email from "@/components/Email";
 import { Raleway, Fira_Code } from "next/font/google";
+import { useState } from "react";
+import HandleLoader from "@/sections/HandleLoader";
+import Loader from "@/components/Loader";
 
-// const inter = Inter({ subsets: ["latin"] });
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--raleway",
@@ -18,28 +20,43 @@ const firaCode = Fira_Code({
   variable: "--fira-code",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Next.js 14 Homepage",
-    template: "%s | Next.js 14",
-  },
-  description: "Next.js app",
-};
+// export const metadata: Metadata = {
+//   title: {
+//     default: "Nehal Surti",
+//     template: "Nehal Surti | %s",
+//   },
+//   description: "Next.js app",
+// };
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+
+  const handleLoaderLoaded = () => {
+    setIsLoading(false);
+    setTimeout(() => setShowContent(true), 450);
+  };
+
   return (
     <html lang="en" className={`${raleway.variable} ${firaCode.variable}`}>
-      <body
-      // className={inter.className}
-      >
-        <Navbar></Navbar>
-        <SocialIcons></SocialIcons>
-        {children}
-        <Email></Email>
+      <body>
+        {isLoading && (
+          <Loader isLoading={isLoading} setIsLoading={handleLoaderLoaded} />
+        )}
+        {showContent && (
+          <>
+            <Navbar></Navbar>
+            <SocialIcons></SocialIcons>
+            {/* <HandleLoader> */}
+            {children}
+            {/* </HandleLoader> */}
+            <Email></Email>
+          </>
+        )}
       </body>
     </html>
   );
