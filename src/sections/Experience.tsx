@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { useInView, motion } from "framer-motion";
 function Experience() {
   const [selected, setSelected] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
     const transformSelected = () => {
@@ -12,6 +14,35 @@ function Experience() {
     };
     transformSelected();
   }, [selected]);
+
+  // console.log("window.location.hash :", window.location.hash);
+  // useEffect(() => {
+  //   // Check if URL contains a hash (#) and scroll to the target element
+  //   // if (window.location.hash) {
+  //   //   const element = document.querySelector(window.location.hash);
+  //   //   if (element) {
+  //   //     element.scrollIntoView({ behavior: 'smooth' });
+  //   //   }
+  //   // }
+  //   const navbarHeight = 80;
+  //     const hash = window.location.hash.split('#')[1];
+  //     console.log("hash",hash);
+  //     if (hash === 'experience') {
+  //       const element = document.getElementById(hash);
+  //       console.log(element);
+  //       if (element) {
+  //         console.log("element.offsetTop : ",element.offsetTop);
+  //         console.log("navbarHeight :",navbarHeight);
+  //         // window.scrollBy(0, 100);
+  //         const offset = element.offsetTop - 250;
+  //         window.scrollTo({ top: offset, behavior: 'smooth'});
+          
+  //         // element.style.transform = "translateX(80px) !important"
+  //         // element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+  //         // element.scrollTop += -120;
+  //       }
+  //     }
+  // }, [window.location.hash]);
 
   const expereinces = [
     {
@@ -79,6 +110,7 @@ function Experience() {
     <motion.div
       className="experience"
       id="experience"
+      ref={ref}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

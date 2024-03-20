@@ -11,6 +11,9 @@ import { motion } from "framer-motion";
 function Navbar() {
   const [navbarVisible, setNavbarVisible] = useState(false);
   const [responsiveNavVisible, setResponsiveNavVisible] = useState(false);
+  const [activeHash, setActiveHash] = useState("");
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
   const sectionLinks = [
     { name: "About", link: "/#about" },
     { name: "Experience", link: "/#experience" },
@@ -21,11 +24,33 @@ function Navbar() {
     },
   ];
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 0 ? setNavbarVisible(true) : setNavbarVisible(false);
-    });
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollPos = window.scrollY;
+
+  //     if (currentScrollPos > prevScrollPos) {
+  //       setNavbarVisible(false);
+  //     } else if(currentScrollPos === prevScrollPos) {
+  //       setNavbarVisible(false);
+  //     }  else {
+  //       setNavbarVisible(true);
+  //     }
+
+  //     setPrevScrollPos(currentScrollPos);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [prevScrollPos]);
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     window.scrollY < 50 ? setNavbarVisible(true) : setNavbarVisible(false);
+  //   });
+  // }, []);
 
   useEffect(() => {
     const links = document.querySelectorAll(".nav-items-list-item-link");
@@ -50,6 +75,17 @@ function Navbar() {
       main?.classList.remove("blur");
     }
   }, [responsiveNavVisible]);
+
+  // useEffect(() => {
+  //   const hash = window.location.hash.split("#")[1];
+
+  //   const element = document.getElementById(hash);
+  //   if (element) {
+  //     // element.classList.add("disabled");
+  //     console.log("nav hash :",hash );
+  //     setActiveHash(hash);
+  //   }
+  // }, [window.location.hash]);
 
   return (
     <nav>
@@ -108,8 +144,17 @@ function Navbar() {
                     ease: "easeInOut",
                     delay: 0.3 + index * 0.1,
                   }}
+                  
                 >
-                  <Link href={link} className="nav-items-list-item-link">
+                  <Link
+                    href={link}
+                    // className="nav-items-list-item-link"
+                    className={
+                      activeHash === name.toLowerCase()
+                        ? "disabled nav-items-list-item-link"
+                        : "nav-items-list-item-link"
+                    }
+                  >
                     {name}
                   </Link>
                 </motion.li>

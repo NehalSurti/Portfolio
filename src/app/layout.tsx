@@ -9,6 +9,7 @@ import { Raleway, Fira_Code } from "next/font/google";
 import { useState } from "react";
 import HandleLoader from "@/sections/HandleLoader";
 import Loader from "@/components/Loader";
+import BackToTopButton from "@/components/BackToTopButton";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
             {children}
             {/* </HandleLoader> */}
             <Email></Email>
+            <BackToTopButton></BackToTopButton>
           </>
         )}
       </body>

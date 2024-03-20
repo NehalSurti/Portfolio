@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { motion } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 
 function Projects() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
   const projectsData = [
     {
       image: "/project1.png",
@@ -65,10 +67,44 @@ function Projects() {
       },
     },
   ];
+
+  // useEffect(() => {
+  //   // Check if URL contains a hash (#) and scroll to the target element
+  //   // if (window.location.hash) {
+  //   //   const element = document.querySelector(window.location.hash);
+  //   //   if (element) {
+  //   //     element.scrollIntoView({ behavior: 'smooth' });
+  //   //   }
+  //   // }
+  //   const navbarHeight = 80;
+  //     const hash = window.location.hash.split('#')[1];
+  //     console.log("hash",hash);
+  //     if (hash === 'work') {
+  //       const element = document.getElementById(hash);
+  //       console.log("element:",element);
+  //       if (element) {
+  //         console.log("element.offsetTop : ",element.offsetTop);
+  //         console.log("navbarHeight :",navbarHeight);
+  //         // window.scrollBy(0, 100);
+  //         const offset = element.offsetTop - 250;
+  //         window.scrollTo({ top: offset, behavior: 'smooth'});
+          
+  //         // element.style.transform = "translateX(80px) !important"
+  //         // element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+  //         // element.scrollTop += -120;
+  //       }
+  //     }
+  // }, [window.location.hash, isInView]);
+
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+  }, [isInView]);
+
   return (
-    <div className="projects" id="work">
+    <div className="projects"  ref={ref}>
       <motion.div
         className="title"
+        id="work"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
