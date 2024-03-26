@@ -1,11 +1,16 @@
 .projectspage {
+  h1 {
+    color: var(--lightest-slate);
+    text-align: center;
+    margin-top: 10px;
+  }
   .projects-grid {
     list-style: none;
     padding: 0px;
     margin: 50px 0px 0px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
     position: relative;
     li {
       // height: 300px;
@@ -19,8 +24,9 @@
         // padding: 2rem 1.75rem;
         border-radius: 5px;
         background-color: var(--light-navy);
-        // transition: var(--transition);
+        transition: 0.3s ease-in-out;
         overflow: auto;
+        justify-content: space-between;
         .project-image-overlay {
           position: absolute;
           top: 0;
@@ -42,6 +48,7 @@
           }
         }
         &:hover {
+          transform: translateY(-10px);
           .project-image-overlay {
             background-color: #00000000;
           }
@@ -59,10 +66,11 @@
           a {
             margin: auto;
             padding: 15px 10px 0px 10px;
+            text-decoration: none;
             .project-info-title {
               width: max-content;
               color: var(--lightest-slate);
-              font-size: var(--txlarge);
+              font-size: var(--tlarge2);
               font-family: var(--raleway);
               cursor: pointer;
               transition: 0.3s ease-in-out;
@@ -81,21 +89,25 @@
           }
         }
         .project-info-tech-list {
-          padding: 10px 25px 15px 25px;
+          padding: 10px 25px 10px 25px;
           display: flex;
           list-style-type: none;
-          gap: 1rem;
+          //   gap: 1rem;
+          row-gap: 0.6rem;
+          column-gap: 1rem;
           flex-wrap: wrap;
           .project-info-tech-list-item {
             color: var(--light-slate);
             font-family: var(--raleway);
+            font-size: var(--tsm1);
           }
         }
         .project-info-links {
           font-size: var(--tlarge2);
           list-style-type: none;
           display: flex;
-          gap: 1rem;
+          justify-content: flex-end;
+          align-items: center;
           .project-info-links-item {
             transition: 0.3s ease-in-out;
             display: flex;
@@ -105,12 +117,12 @@
               padding: 10px;
               color: var(--lightest-slate);
               transition: 0.3s ease-in-out;
-              outline: 2px dashed transparent;
+              // outline: 2px dashed transparent;
               &:hover {
                 color: var(--theme-color);
               }
               &:focus {
-                outline-color: var(--theme-color);
+                // outline-color: var(--theme-color);
                 transform: translateY(-4px);
                 color: var(--theme-color);
               }
