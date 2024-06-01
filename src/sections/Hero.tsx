@@ -16,7 +16,7 @@ function Hero() {
           delay: 0.6,
         }}
       >
-        Hi my name is
+        Hi, my name is
       </motion.h1>
       <motion.h2
         className="hero-title-large"
@@ -52,28 +52,11 @@ function Hero() {
           delay: 1.35,
         }}
       >
-        I&apos;m a software engineer with expertise in creating top-notch
-        digital experiences. My current focus is on developing products that are
-        accessible and centered around user needs, as part of the team at&nbsp;
-        <Link href="https://rapidops.com" target="_blank" className="link">
-          Rapidops.
-        </Link>
+        I'm a passionate web developer specializing in interactive and
+        responsive websites. I focus on creating intuitive, user-friendly
+        experiences and love using the latest technologies to solve real-world
+        problems. 
       </motion.p>
-      <motion.div
-        className="hero-button"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-          delay: 1.65,
-        }}
-      >
-        <Button
-          text="Check out my course"
-          link="https://youtube.com/kishansheth21"
-        />
-      </motion.div>
     </div>
   );
 }

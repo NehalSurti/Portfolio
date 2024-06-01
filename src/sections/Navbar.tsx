@@ -12,7 +12,6 @@ function Navbar() {
   const [navbarVisible, setNavbarVisible] = useState(false);
   const [responsiveNavVisible, setResponsiveNavVisible] = useState(false);
   const [activeHash, setActiveHash] = useState("");
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const sectionLinks = [
     { name: "About", link: "/#about" },
@@ -23,34 +22,6 @@ function Navbar() {
       link: "/#contact",
     },
   ];
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollPos = window.scrollY;
-
-  //     if (currentScrollPos > prevScrollPos) {
-  //       setNavbarVisible(false);
-  //     } else if(currentScrollPos === prevScrollPos) {
-  //       setNavbarVisible(false);
-  //     }  else {
-  //       setNavbarVisible(true);
-  //     }
-
-  //     setPrevScrollPos(currentScrollPos);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [prevScrollPos]);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     window.scrollY < 50 ? setNavbarVisible(true) : setNavbarVisible(false);
-  //   });
-  // }, []);
 
   useEffect(() => {
     const links = document.querySelectorAll(".nav-items-list-item-link");
@@ -69,23 +40,18 @@ function Navbar() {
 
   useEffect(() => {
     const main = document.querySelector("main");
+    const socialIcons = document.querySelector(".social-icons-list");
+    const brandIcon = document.querySelector(".brand");
     if (responsiveNavVisible) {
       main?.classList.add("blur");
+      socialIcons?.classList.add("blur");
+      brandIcon?.classList.add("blur");
     } else {
       main?.classList.remove("blur");
+      socialIcons?.classList.remove("blur");
+      brandIcon?.classList.remove("blur");
     }
   }, [responsiveNavVisible]);
-
-  // useEffect(() => {
-  //   const hash = window.location.hash.split("#")[1];
-
-  //   const element = document.getElementById(hash);
-  //   if (element) {
-  //     // element.classList.add("disabled");
-  //     console.log("nav hash :",hash );
-  //     setActiveHash(hash);
-  //   }
-  // }, [window.location.hash]);
 
   return (
     <nav>
@@ -118,6 +84,7 @@ function Navbar() {
                 e.stopPropagation();
                 setResponsiveNavVisible(false);
               }}
+              className="closeIcon"
             />
           ) : (
             <GiHamburgerMenu
@@ -144,7 +111,6 @@ function Navbar() {
                     ease: "easeInOut",
                     delay: 0.3 + index * 0.1,
                   }}
-                  
                 >
                   <Link
                     href={link}
@@ -171,7 +137,7 @@ function Navbar() {
               delay: 0.6,
             }}
           >
-            <Button text="Resume" link="http://localhost:3000/resume.pdf" />
+            <Button text="Resume" link="/resume.pdf" />
           </motion.div>
         </div>
       </div>

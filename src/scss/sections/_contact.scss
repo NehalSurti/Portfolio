@@ -39,3 +39,22 @@
     }
   }
 }
+
+@media screen and (max-width: 680px) {
+  .contact {
+    margin: 10rem auto;
+
+    .contact-title {
+      &::before {
+      }
+    }
+    .contact-sub-title {
+    }
+    .contact-text {
+    }
+    .contact-cta {
+      .btn {
+      }
+    }
+  }
+}

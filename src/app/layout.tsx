@@ -1,13 +1,10 @@
 "use client";
-import type { Metadata } from "next";
-// import "./globals.css";
 import "@/scss/index.scss";
 import Navbar from "@/sections/Navbar";
 import SocialIcons from "@/components/SocialIcons";
 import Email from "@/components/Email";
 import { Raleway, Fira_Code } from "next/font/google";
 import { useState } from "react";
-import HandleLoader from "@/sections/HandleLoader";
 import Loader from "@/components/Loader";
 import BackToTopButton from "@/components/BackToTopButton";
 
@@ -20,14 +17,6 @@ const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--fira-code",
 });
-
-// export const metadata: Metadata = {
-//   title: {
-//     default: "Nehal Surti",
-//     template: "Nehal Surti | %s",
-//   },
-//   description: "Next.js app",
-// };
 
 export default function RootLayout({
   children,
@@ -45,20 +34,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${raleway.variable} ${firaCode.variable}`}>
       <body>
-        {isLoading && (
-          <Loader isLoading={isLoading} setIsLoading={handleLoaderLoaded} />
-        )}
-        {showContent && (
-          <>
-            <Navbar></Navbar>
-            <SocialIcons></SocialIcons>
-            {/* <HandleLoader> */}
-            {children}
-            {/* </HandleLoader> */}
-            <Email></Email>
-            <BackToTopButton></BackToTopButton>
-          </>
-        )}
+        <div className="webpageContainer">
+          {isLoading && (
+            <Loader isLoading={isLoading} setIsLoading={handleLoaderLoaded} />
+          )}
+          {showContent && (
+            <>
+              <Navbar></Navbar>
+              <SocialIcons></SocialIcons>
+              {children}
+              <Email></Email>
+              <BackToTopButton></BackToTopButton>
+            </>
+          )}
+        </div>
       </body>
     </html>
   );

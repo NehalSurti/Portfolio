@@ -1,0 +1,38 @@
+.tabbutton {
+  height: 2.5rem;
+  padding: 0 0.5rem 0 0.5rem;
+  display: flex;
+  cursor: pointer;
+  width: max-content;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    background-color: var(--light-navy);
+
+    .tabbuttontitle {
+      color: var(--theme-color);
+    }
+  }
+
+  .tabbuttontitle {
+    color: var(--slate);
+    font-family: var(--fira-code);
+    font-size: var(--tsm1);
+    &.buttonActiveClass {
+      color: var(--theme-color);
+    }
+  }
+
+  .tabbuttonunderline {
+    background-color: var(--theme-color);
+    height: 0.2rem;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+  }
+}

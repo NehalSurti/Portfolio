@@ -1,105 +1,26 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function Productspage() {
   const projectsData = [
     {
-      image: "/project1.png",
-      projectName: "Pokedex",
-      projectLink: "https://netlify.com",
-      projectDescription:
-        "This is a web application that uses the PokeAPI to display information about different Pokemon, including their evolution levels and details. You can compare multiple Pokemon using a queue, and add them to your personal list using Firebase's Firestore database.",
-      projectTech: [
-        "React",
-        "Redux Toolkit",
-        "SCSS",
-        "Firebase",
-        "Typescript",
-        "PokeApi",
-      ],
-      projectExternalLinks: {
-        github: "",
-        externalLink: "",
-      },
-    },
-    {
-      image: "/project2.png",
-      projectName: "Realtime Chat App",
-      projectLink: "https://netlify.com",
-      projectDescription:
-        "This is a chat app made with React and Node.js that sends real-time messages and is highly scalable. It uses advanced JavaScript concepts like debouncing and is optimized for React. It has 300+ stars on GitHub and over 180k views on YouTube.",
-      projectTech: [
-        "React",
-        "Sockets",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Styled Components",
-      ],
-      projectExternalLinks: {
-        github: "",
-        externalLink: "",
-      },
-    },
-    {
-      image: "/project3.png",
-      projectName: "Netflix App",
-      projectLink: "https://netlify.com",
-      projectDescription:
-        "I made a Netflix copy with TMBD Api. It has infinite scrolling and lets you watch movies by genre. You can also add movies to your favorites list.",
-      projectTech: [
-        "React",
-        "Node.js",
-        "Firebase",
-        "MongoDB",
-        "Express",
-        "Redux Toolkit",
-      ],
-      projectExternalLinks: {
-        github: "",
-        externalLink: "",
-      },
-    },
-    {
-      image: "/project4.png",
-      projectName: "Analogue Clock",
-      projectLink: "https://nehalsurti.github.io/Analogue-Clock/",
-      projectDescription:
-        "An analog clock which will dynamically display the current time based on the user's browser. Utilizing JavaScript, the current time will be converted into degrees to accurately position the hour, minute, and second hands on the clock face.",
-      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Analogue-Clock",
-        externalLink: "https://nehalsurti.github.io/Analogue-Clock/",
-      },
-    },
-    {
       image: "/project5.png",
-      projectName: "Tabs Section",
-      projectLink: "https://nehalsurti.github.io/Tabs-Section/",
+      projectName: "Worthwhile Fintech",
+      projectLink: "https://worthwhilefintech.com/",
       projectDescription:
-        "Created a tab section with several tabs, each with a title and text. The title and text displayed will change dynamically when clicked on a tab. Every tab will also have a hover effect applied to it. The content will be updated dynamically using JavaScript.",
-      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+        "Responsive website for a fintech using React for the front-end and Django for the back-end, deployed on cPanel.",
+      projectTech: ["React", "Django", "cPanel"],
       projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Tabs-Section",
-        externalLink: "https://nehalsurti.github.io/Tabs-Section/",
+        github: "https://github.com/NehalSurti/Worthwhile-Fintech",
+        externalLink: "https://worthwhilefintech.com/",
       },
     },
     {
       image: "/project6.png",
-      projectName: "Mouse Position Tracker",
-      projectLink: "https://nehalsurti.github.io/Mouse-Position-Tracker/",
-      projectDescription:
-        "Created a mouse event tracker that shows the mouse's X and Y positions as it goes across the screen. Mouse movement is tracked in the browser by implementing the event listener technique in JavaScript.",
-      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Mouse-Position-Tracker",
-        externalLink: "https://nehalsurti.github.io/Mouse-Position-Tracker/",
-      },
-    },
-    {
-      image: "/project7.png",
       projectName: "Notes App",
       projectLink: "https://notes-app-peach-one.vercel.app/",
       projectDescription:
@@ -119,7 +40,7 @@ function Productspage() {
       },
     },
     {
-      image: "/project8.png",
+      image: "/project7.png",
       projectName: "Retro Design",
       projectLink: "https://nehalsurti.github.io/Retro-Design-Website/",
       projectDescription:
@@ -131,7 +52,7 @@ function Productspage() {
       },
     },
     {
-      image: "/project9.png",
+      image: "/project8.png",
       projectName: "Contact App",
       projectLink: "https://nehalsurti.github.io/Contact-App-React/",
       projectDescription:
@@ -143,31 +64,7 @@ function Productspage() {
       },
     },
     {
-      image: "/project10.png",
-      projectName: "Random Color Generator",
-      projectLink: "https://nehalsurti.github.io/Random-Color-Generator/",
-      projectDescription:
-        "An App that generates multiple random colors and codes with JavaScript. With each page refresh, up to 30 color containers display randomly changing colors and corresponding codes.",
-      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Random-Color-Generator",
-        externalLink: "https://nehalsurti.github.io/Random-Color-Generator/",
-      },
-    },
-    {
-      image: "/project11.png",
-      projectName: "Random Password Generator",
-      projectLink: "https://nehalsurti.github.io/Random-Password-Generator/",
-      projectDescription:
-        "Random password generator with a copy icon and a button to generate random password. A notification indicating the successful copying of the password can be seen by users when they use the given icon.",
-      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Random-Password-Generator",
-        externalLink: "https://nehalsurti.github.io/Random-Password-Generator/",
-      },
-    },
-    {
-      image: "/project12.png",
+      image: "/project9.png",
       projectName: "Tic-Tac-Toe",
       projectLink: "https://nehalsurti.github.io/Tic-Tac-Toe-React/",
       projectDescription:
@@ -185,7 +82,67 @@ function Productspage() {
       },
     },
     {
+      image: "/project10.png",
+      projectName: "Image Search App",
+      projectLink: "https://nehalsurti.github.io/Image-Search-App/",
+      projectDescription:
+        "Image search app that lets you search for any desired image. Enter your search query and receive results accompanied by a description.  Using the Unsplash API, the app fetches up to 1000 unique and non-repetitive images.",
+      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/Image-Search-App",
+        externalLink: "https://nehalsurti.github.io/Image-Search-App/",
+      },
+    },
+    {
+      image: "/project11.png",
+      projectName: "Random Color Generator",
+      projectLink: "https://nehalsurti.github.io/Random-Color-Generator/",
+      projectDescription:
+        "An App that generates multiple random colors and codes with JavaScript. With each page refresh, up to 30 color containers display randomly changing colors and corresponding codes.",
+      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/Random-Color-Generator",
+        externalLink: "https://nehalsurti.github.io/Random-Color-Generator/",
+      },
+    },
+    {
+      image: "/project12.png",
+      projectName: "Background Generator",
+      projectLink: "https://nehalsurti.github.io/Background-Generator/",
+      projectDescription:
+        "An interactive background generator that allows users to test and see live changes of color gradient and tilted direction. If done, simply copy the CSS code.",
+      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/Background-Generator",
+        externalLink: "https://nehalsurti.github.io/Background-Generator/",
+      },
+    },
+    {
       image: "/project13.png",
+      projectName: "Random Password Generator",
+      projectLink: "https://nehalsurti.github.io/Random-Password-Generator/",
+      projectDescription:
+        "Random password generator with a copy icon and a button to generate random password. A notification indicating the successful copying of the password can be seen by users when they use the given icon.",
+      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/Random-Password-Generator",
+        externalLink: "https://nehalsurti.github.io/Random-Password-Generator/",
+      },
+    },
+    {
+      image: "/project14.png",
+      projectName: "Analogue Clock",
+      projectLink: "https://nehalsurti.github.io/Analogue-Clock/",
+      projectDescription:
+        "An analog clock which will dynamically display the current time based on the user's browser. Utilizing JavaScript, the current time will be converted into degrees to accurately position the hour, minute, and second hands on the clock face.",
+      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/Analogue-Clock",
+        externalLink: "https://nehalsurti.github.io/Analogue-Clock/",
+      },
+    },
+    {
+      image: "/project15.png",
       projectName: "New Year Countdown",
       projectLink: "https://nehalsurti.github.io/New-Year-Countdown/",
       projectDescription:
@@ -197,19 +154,7 @@ function Productspage() {
       },
     },
     {
-      image: "/project14.png",
-      projectName: "Dice Roll Simulator",
-      projectLink: "https://nehalsurti.github.io/Dice-Roll-Simulator/",
-      projectDescription:
-        'Click the "Roll dice" button to trigger an animation and generate a random number, displayed in the center of the dice. The rolled number is also added to a history list for easy tracking.',
-      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Dice-Roll-Simulator",
-        externalLink: "https://nehalsurti.github.io/Dice-Roll-Simulator/",
-      },
-    },
-    {
-      image: "/project15.png",
+      image: "/project16.png",
       projectName: "Pomodoro Timer",
       projectLink: "https://nehalsurti.github.io/Pomodoro-Timer/",
       projectDescription:
@@ -221,7 +166,7 @@ function Productspage() {
       },
     },
     {
-      image: "/project16.png",
+      image: "/project17.png",
       projectName: "Stopwatch",
       projectLink: "https://nehalsurti.github.io/Stopwatch/",
       projectDescription:
@@ -232,36 +177,93 @@ function Productspage() {
         externalLink: "https://nehalsurti.github.io/Stopwatch/",
       },
     },
-    {
-      image: "/project17.png",
-      projectName: "Worthwhile Fintech",
-      projectLink: "https://worthwhilefintech.com/",
-      projectDescription:
-        'Click the "Roll dice" button to trigger an animation and generate a random number, displayed in the center of the dice. The rolled number is also added to a history list for easy tracking.',
-      projectTech: ["React", "Django", "cPanel"],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Worthwhile-Fintech",
-        externalLink: "https://worthwhilefintech.com/",
-      },
-    },
-    {
-      image: "/project18.png",
-      projectName: "Feedback UI",
-      projectLink: "https://nehalsurti.github.io/Feedback-UI/",
-      projectDescription:
-        "Pomodoro timer includes a countdown clock and three buttons - start, stop, and reset. Clicking start initiates a 25-minute countdown, which can be paused with the stop button and resumed with start. An alert notifies when the timer ends.",
-      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Feedback-UI",
-        externalLink: "https://nehalsurti.github.io/Feedback-UI/",
-      },
-    },
+    // {
+    //   image: "/project5.png",
+    //   projectName: "Tabs Section",
+    //   projectLink: "https://nehalsurti.github.io/Tabs-Section/",
+    //   projectDescription:
+    //     "Created a tab section with several tabs, each with a title and text. The title and text displayed will change dynamically when clicked on a tab. Every tab will also have a hover effect applied to it. The content will be updated dynamically using JavaScript.",
+    //   projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    //   projectExternalLinks: {
+    //     github: "https://github.com/NehalSurti/Tabs-Section",
+    //     externalLink: "https://nehalsurti.github.io/Tabs-Section/",
+    //   },
+    // },
+    // {
+    //   image: "/project6.png",
+    //   projectName: "Mouse Position Tracker",
+    //   projectLink: "https://nehalsurti.github.io/Mouse-Position-Tracker/",
+    //   projectDescription:
+    //     "Created a mouse event tracker that shows the mouse's X and Y positions as it goes across the screen. Mouse movement is tracked in the browser by implementing the event listener technique in JavaScript.",
+    //   projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    //   projectExternalLinks: {
+    //     github: "https://github.com/NehalSurti/Mouse-Position-Tracker",
+    //     externalLink: "https://nehalsurti.github.io/Mouse-Position-Tracker/",
+    //   },
+    // },
+    // {
+    //   image: "/project14.png",
+    //   projectName: "Dice Roll Simulator",
+    //   projectLink: "https://nehalsurti.github.io/Dice-Roll-Simulator/",
+    //   projectDescription:
+    //     'Click the "Roll dice" button to trigger an animation and generate a random number, displayed in the center of the dice. The rolled number is also added to a history list for easy tracking.',
+    //   projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    //   projectExternalLinks: {
+    //     github: "https://github.com/NehalSurti/Dice-Roll-Simulator",
+    //     externalLink: "https://nehalsurti.github.io/Dice-Roll-Simulator/",
+    //   },
+    // },
+    // {
+    //   image: "/project18.png",
+    //   projectName: "Feedback UI",
+    //   projectLink: "https://nehalsurti.github.io/Feedback-UI/",
+    //   projectDescription:
+    //     "Feedback UI that allows users to give feedback by selecting from three ratings: unhappy, neutral, and satisfied, each with a hovering effect. Upon selecting a rating, it becomes active and changes background color.",
+    //   projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    //   projectExternalLinks: {
+    //     github: "https://github.com/NehalSurti/Feedback-UI",
+    //     externalLink: "https://nehalsurti.github.io/Feedback-UI/",
+    //   },
+    // },
+    // {
+    //   image: "/project20.png",
+    //   projectName: "Basic Calculator",
+    //   projectLink: "https://nehalsurti.github.io/Basic-calculator/",
+    //   projectDescription:
+    //     "Sleek modern calculator featuring all essential buttons: numbers, operators, equal sign, and clear. Simply input any arithmetic expression, and the calculator instantly computes the result",
+    //   projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+    //   projectExternalLinks: {
+    //     github: "https://github.com/NehalSurti/Basic-calculator",
+    //     externalLink: "https://nehalsurti.github.io/Basic-calculator/",
+    //   },
+    // },
   ];
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
     <main>
       <div className="projectspage">
         <h1>Projects</h1>
-        <ul className="projects-grid">
+        <motion.ul
+          className="projects-grid"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
           {projectsData.map(
             ({
               image,
@@ -272,7 +274,7 @@ function Productspage() {
               projectTech,
             }) => {
               return (
-                <li>
+                <motion.li key={projectName} variants={item}>
                   <div className="project-container">
                     <div className="project-image-overlay"></div>
                     <div className="project-container-upper">
@@ -326,55 +328,11 @@ function Productspage() {
                       </ul>
                     </div>
                   </div>
-                </li>
-                //   <div
-                //     className="project"
-                //     key={projectName}
-
-                //   >
-                //     <div className="project-image">
-                //       <div className="project-image-overlay"></div>
-                //       <div className="project-image-container">
-                //         <Image src={image} fill alt={projectName} quality={100} />
-                //       </div>
-                //     </div>
-                //     <div className="project-info">
-                //       <p className="project-info-overline">Featured Project</p>
-                //       <h3 className="project-info-title">{projectName}</h3>
-                //       <div className="project-info-description">
-                //         <p>{projectDescription}</p>
-                //       </div>
-                //       <ul className="project-info-tech-list">
-                //         {projectTech.map((tech) => (
-                //           <li className="project-info-tech-list-item" key={tech}>
-                //             {tech}
-                //           </li>
-                //         ))}
-                //       </ul>
-                //       <ul className="project-info-links">
-                //         <li className="project-info-links-item">
-                //           <Link
-                //             href={projectExternalLinks.github}
-                //             className="project-info-links-item-link"
-                //           >
-                //             <FiGithub />
-                //           </Link>
-                //         </li>
-                //         <li className="project-info-links-item">
-                //           <Link
-                //             href={projectExternalLinks.externalLink}
-                //             className="project-info-links-item-link"
-                //           >
-                //             <FiExternalLink />
-                //           </Link>
-                //         </li>
-                //       </ul>
-                //     </div>
-                //   </div>
+                </motion.li>
               );
             }
           )}
-        </ul>
+        </motion.ul>
       </div>
       <div>page</div>;
     </main>

@@ -34,15 +34,18 @@
       position: relative;
       display: flex;
       justify-content: flex-end;
+      min-height: 300px;
       &-image {
         &-container {
           position: relative;
           width: 600px;
-          height: 300px;
+          // height: 300px;
+          height: 100%;
         }
         position: absolute;
         top: 0;
         left: 0;
+        height: 100%;
 
         &:hover {
           .project-image-overlay {
@@ -71,8 +74,18 @@
         width: 600px;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        gap: 0.5rem;
+        justify-content: space-between;
+        // gap: 0.5rem;
+        &-top {
+          align-items: flex-end;
+          display: flex;
+          flex-direction: column;
+          row-gap: 2px;
+        }
+        &-bottom {
+          display: flex;
+          justify-content: flex-end;
+        }
         &-overline {
           color: var(--theme-color);
           font-family: var(--fira-code);
@@ -91,6 +104,7 @@
         &-description {
           background-color: var(--light-navy);
           border-radius: 0.2rem;
+          box-shadow: 0 10px 30px -15px rgba(32, 4, 44, 0.7);
           p {
             color: var(--light-slate);
             font-family: var(--raleway);
@@ -101,8 +115,11 @@
         &-tech-list {
           display: flex;
           list-style-type: none;
-          gap: 1rem;
+          // gap: 1rem;
           flex-wrap: wrap;
+          row-gap: 0.5rem;
+          column-gap: 1rem;
+          width: 72%;
           &-item {
             color: var(--light-slate);
             font-family: var(--raleway);
@@ -142,7 +159,13 @@
           left: initial;
         }
         .project-info {
-          align-items: flex-start;
+          // align-items: flex-start;
+          &-top {
+            align-items: flex-start;
+          }
+          &-bottom {
+            justify-content: flex-start;
+          }
           &-description {
             p {
               text-align: start;
@@ -152,30 +175,122 @@
       }
     }
   }
-  @media screen and (max-width: 1100px) {
+  &-showProjects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-button {
+      color: var(--theme-color);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border: 1px solid var(--theme-color);
+      border-radius: 4px;
+      background-color: transparent;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+      font-size: var(--tsm1);
+      outline: none;
+      cursor: pointer;
+      &:hover {
+        // outline: none;
+        // box-shadow: 4px 4px 0 0 var(--theme-color);
+        // transform: translate(-5px, -5px);
+        background-color: var(--lightest-navy);
+      }
+    }
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1500px) {
     &-container {
       align-items: center;
       .project {
-        justify-content: flex-start;
+        width: max-content;
+        padding-left: 200px;
+        &-image {
+          &-container {
+            width: 350px;
+          }
+        }
         .project-info {
-          width: 600px;
-          height: 300px;
-          background-color: rgba(31, 10, 44, 0.592);
-          align-items: flex-start;
-          padding: 1rem;
-
-          &-description {
-            background-color: transparent;
-            p {
-              padding: 0;
-              text-align: start;
+          &-top {
+            .project-info-overline {
+            }
+            .project-info-title {
+            }
+            .project-info-description {
+              p {
+              }
+            }
+            .project-info-tech-list {
+              .project-info-tech-list-item {
+              }
+            }
+          }
+          &-bottom {
+            .project-info-links {
             }
           }
         }
         &:nth-of-type(even) {
-          .project-image {
-            left: 0;
-            right: initial;
+          padding-left: 0;
+          padding-right: 200px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    &-container {
+      align-items: center;
+      .project {
+        flex-direction: column;
+        &-image {
+          position: relative;
+          &-container {
+            width: 450px;
+            height: 200px;
+          }
+        }
+        .project-info {
+          width: 450px;
+          height: max-content;
+          align-items: flex-start;
+          padding: 1rem 1rem 0 1rem;
+          gap: 20px;
+          background-color: var(--light-navy);
+          &-top {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+            .project-info-overline {
+              display: none;
+            }
+            .project-info-title {
+              align-self: center;
+            }
+            .project-info-description {
+              background-color: transparent;
+              box-shadow: none;
+              p {
+                padding: 0;
+                text-align: start;
+                padding-left: 15px;
+              }
+            }
+            .project-info-tech-list {
+              row-gap: 0.5rem;
+              column-gap: 1rem;
+              padding: 0;
+              width: 100%;
+              padding-left: 15px;
+              .project-info-tech-list-item {
+                font-size: var(--tsm1);
+              }
+            }
+          }
+          &-bottom {
+            align-self: flex-end;
+            .project-info-links {
+              gap: 0;
+            }
           }
         }
       }
@@ -184,32 +299,95 @@
   @media screen and (max-width: 680px) {
     margin: 5rem 0;
     &-container {
+      align-items: center;
       .project {
+        flex-direction: column;
         &-image {
-          &-container {
-            width: 500px;
-            height: 300px;
-          }
-        }
-        .project-info {
-          width: 500px;
-          height: 300px;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 600px) {
-    &-container {
-      .project {
-        &-image {
+          position: relative;
           &-container {
             width: 350px;
-            height: 400px;
+            height: 200px;
           }
         }
         .project-info {
           width: 350px;
-          height: 400px;
+          height: max-content;
+          align-items: flex-start;
+          padding: 1rem 1rem 0 1rem;
+          gap: 20px;
+          background-color: var(--light-navy);
+          &-top {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+            .project-info-overline {
+              display: none;
+            }
+            .project-info-title {
+              align-self: center;
+            }
+            .project-info-description {
+              background-color: transparent;
+              box-shadow: none;
+              p {
+                padding: 0;
+                text-align: start;
+              }
+            }
+            .project-info-tech-list {
+              row-gap: 0.5rem;
+              column-gap: 1rem;
+              padding: 0;
+              width: 100%;
+              .project-info-tech-list-item {
+                font-size: var(--tsm1);
+              }
+            }
+          }
+          &-bottom {
+            align-self: flex-end;
+            .project-info-links {
+              gap: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    &-container {
+      .project {
+        &-image {
+          &-container {
+            width: 300px;
+          }
+        }
+        .project-info {
+          width: 300px;
+          &-top {
+            .project-info-overline {
+            }
+            .project-info-title {
+              font-size: var(--tlarge);
+            }
+            .project-info-description {
+              p {
+                font-size: var(--tsm2);
+              }
+            }
+            .project-info-tech-list {
+              row-gap: 0.2rem;
+              .project-info-tech-list-item {
+                font-size: var(--tsm);
+              }
+            }
+          }
+          &-bottom {
+            .project-info-links {
+              font-size: var(--tlarge);
+            }
+          }
         }
       }
     }

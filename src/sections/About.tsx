@@ -1,39 +1,72 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useTransition } from "react";
 import { useInView, motion } from "framer-motion";
+import TabButton from "../components/TabButton";
 
 function About() {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  
-  // useEffect(() => {
-  //   // Check if URL contains a hash (#) and scroll to the target element
-  //   // if (window.location.hash) {
-  //   //   const element = document.querySelector(window.location.hash);
-  //   //   if (element) {
-  //   //     element.scrollIntoView({ behavior: 'smooth' });
-  //   //   }
-  //   // }
-  //   const navbarHeight = 80;
-  //     const hash = window.location.hash.split('#')[1];
-  //     console.log("hash",hash);
-  //     if (hash === 'about') {
-  //       const element = document.getElementById(hash);
-  //       if (element) {
-  //         console.log("element.offsetTop : ",element.offsetTop);
-  //         console.log("navbarHeight :",navbarHeight);
-  //         // window.scrollBy(0, 100);
-  //         const offset = element.offsetTop - 250;
-  //         window.scrollTo({ top: offset, behavior: 'smooth'});
-          
-  //         // element.style.transform = "translateX(80px) !important"
-  //         // element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-  //         // element.scrollTop += -120;
-  //       }
-  //     }
-  // }, [window.location.hash]);
+
+  const [tab, setTab] = useState("skills");
+  const [isPending, startTransition] = useTransition();
+
+  const handleTabChange = (id: any) => {
+    startTransition(() => {
+      setTab(id);
+    });
+  };
+
+  const TAB_DATA = [
+    {
+      title: "Skills",
+      id: "skills",
+      content: (
+        <ul className="list-disc list-disc-skill">
+          <li className="list-disc-item list-disc-item-skill">JavaScript</li>
+          <li className="list-disc-item list-disc-item-skill">React</li>
+          <li className="list-disc-item list-disc-item-skill">Next.js</li>
+          <li className="list-disc-item list-disc-item-skill">TypeScript</li>
+          <li className="list-disc-item list-disc-item-skill">Redux Toolkit</li>
+          <li className="list-disc-item list-disc-item-skill">Node.js</li>
+          <li className="list-disc-item list-disc-item-skill">Express</li>
+          <li className="list-disc-item list-disc-item-skill">PostgreSQL</li>
+          <li className="list-disc-item list-disc-item-skill">MongoDb</li>
+        </ul>
+      ),
+    },
+    {
+      title: "Education",
+      id: "education",
+      content: (
+        <ul className="list-disc">
+          <li className="list-disc-item">
+            MTech, Thermal Engineering<span>Nirma University</span>
+          </li>
+          <li className="list-disc-item">
+            BE, Mechanical Engineering
+            <span>Gujarat Technological University </span>
+          </li>
+        </ul>
+      ),
+    },
+    {
+      title: "Certifications",
+      id: "certifications",
+      content: (
+        <ul className="list-disc">
+          <li className="list-disc-item">
+            Complete Python Developer <span>Zero To Mastery Academy </span>
+          </li>
+          <li className="list-disc-item">
+            Complete SQL and Databases Bootcamp{" "}
+            <span>Zero To Mastery Academy </span>
+          </li>
+        </ul>
+      ),
+    },
+  ];
 
   useEffect(() => {
     console.log("Element is in view: ", isInView);
@@ -58,50 +91,54 @@ function About() {
       <div className="about-grid">
         <div className="about-grid-info">
           <p className="about-grid-info-text">
-            Bonjour! My name is Kishan, and I am passionate about creating
-            digital content for the web. My interest in web development was
-            sparked in 2016 when I created my first project called Lavish, a
-            social media app built using React and Node.js.
+            Hello! My name is Nehal and I am passionate about creating digital
+            content for the web. I have a strong grasp of web standards and best
+            practices, and I am passionate about developing user-friendly and
+            visually appealing web applications. As a collaborative team player,
+            I am always eager to lend a helping hand and contribute effectively
+            to any project. I am now seeking an opportunity to leverage my
+            skills and experience to make a positive impact in the field of web
+            development.
           </p>
-          <p className="about-grid-info-text">
-            Fast-forward to today, I specialize in designing and developing
-            high-quality solutions that delight our clients and exceed their
-            expectations at{" "}
-            <Link href="https://rapidops.com" className="link" target="_blank">
-              Rapidops.
-            </Link>
-          </p>
-
-          <p className="about-grid-info-text">
-            Additionally, I share my knowledge and passion with the world
-            through my YouTube channel, where I demonstrate how to build
-            full-stack applications.
-          </p>
-          <p className="about-grid-info-text">
-            I am also working on a new project called&nbsp;
-            <Link
-              className="link"
-              target="_blank"
-              href="https://frontendvita.com"
-            >
-              FrontendVita,
-            </Link>
-            &nbsp;aimed at enhancing frontend development skills.
-          </p>
-          <p className="about-grid-info-text">
+          {/* <p className="about-grid-info-text">
             Here are a few technologies I’ve been working with recently:
           </p>
           <ul className="about-grid-info-list">
+            <li className="about-grid-info-list-item">JavaScript</li>
             <li className="about-grid-info-list-item">React</li>
-            <li className="about-grid-info-list-item">React Native</li>
             <li className="about-grid-info-list-item">Next.js</li>
-            <li className="about-grid-info-list-item">Typescript</li>
+            <li className="about-grid-info-list-item">TypeScript</li>
             <li className="about-grid-info-list-item">Redux Toolkit</li>
             <li className="about-grid-info-list-item">Node.js</li>
-            <li className="about-grid-info-list-item">Elasticsearch</li>
-            <li className="about-grid-info-list-item">Kibana</li>
-            <li className="about-grid-info-list-item">CSS</li>
-          </ul>
+          </ul> */}
+          <div className="tabButtonContainer">
+            <div className="tabButtonContainerTitle">
+              <TabButton
+                selectTab={() => handleTabChange("skills")}
+                active={tab === "skills"}
+              >
+                {" "}
+                Skills{" "}
+              </TabButton>
+              <TabButton
+                selectTab={() => handleTabChange("education")}
+                active={tab === "education"}
+              >
+                {" "}
+                Education{" "}
+              </TabButton>
+              <TabButton
+                selectTab={() => handleTabChange("certifications")}
+                active={tab === "certifications"}
+              >
+                {" "}
+                Certifications{" "}
+              </TabButton>
+            </div>
+            <div className="tabButtonContainerDetails">
+              {TAB_DATA.find((t) => t.id === tab)?.content}
+            </div>
+          </div>
         </div>
         <div className="about-grid-photo">
           <div className="overlay"></div>

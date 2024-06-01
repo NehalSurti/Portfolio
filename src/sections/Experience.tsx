@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useInView, motion } from "framer-motion";
 function Experience() {
   const [selected, setSelected] = useState(0);
+
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -15,97 +16,74 @@ function Experience() {
     transformSelected();
   }, [selected]);
 
-  // console.log("window.location.hash :", window.location.hash);
-  // useEffect(() => {
-  //   // Check if URL contains a hash (#) and scroll to the target element
-  //   // if (window.location.hash) {
-  //   //   const element = document.querySelector(window.location.hash);
-  //   //   if (element) {
-  //   //     element.scrollIntoView({ behavior: 'smooth' });
-  //   //   }
-  //   // }
-  //   const navbarHeight = 80;
-  //     const hash = window.location.hash.split('#')[1];
-  //     console.log("hash",hash);
-  //     if (hash === 'experience') {
-  //       const element = document.getElementById(hash);
-  //       console.log(element);
-  //       if (element) {
-  //         console.log("element.offsetTop : ",element.offsetTop);
-  //         console.log("navbarHeight :",navbarHeight);
-  //         // window.scrollBy(0, 100);
-  //         const offset = element.offsetTop - 250;
-  //         window.scrollTo({ top: offset, behavior: 'smooth'});
-          
-  //         // element.style.transform = "translateX(80px) !important"
-  //         // element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-  //         // element.scrollTop += -120;
-  //       }
-  //     }
-  // }, [window.location.hash]);
-
   const expereinces = [
     {
-      name: "Rapidops",
+      name: "Freelance",
       role: "Full Stack Developer",
-      url: "https://www.rapidops.com",
-      start: "January 2021",
+      url: "",
+      start: "December 2023",
       end: "Present",
       shortDescription: [
-        "I had experience working on a large codebase utilizing Kibana and Elasticsearch.",
-        "Throughout my work, I've utilized various MERN stack technologies, including React, Redux, TypeScript, Node.js, Hapi, and Elasticsearch, among others.",
-        "I've also managed a small team that includes Frontend Developers, Backend Developers, and UI/UX Developers.",
-        "Additionally, I've represented the company in client meetings, communicating effectively on their behalf.",
+        "Specializing in web development using MERN Stack, I create dynamic and responsive websites tailored to client needs.",
+        "Experienced in developing and maintaining projects from inception to deployment, ensuring high-quality and scalable solutions.",
+        "Collaborate closely with clients to understand their vision and deliver custom web applications that not only meet but exceed their expectations.",
+        "Proficient in integrating a variety of technologies, optimizing performance, and delivering seamless user experiences across all devices.",
       ],
     },
     {
-      name: "Youtube",
-      role: "Content Creator",
-      url: "https://www.youtube.com/kishansheth21",
-      start: "April 2021",
-      end: "Present",
+      name: "Gorillas",
+      role: "Operations Associate",
+      url: "https://gorillas.io/",
+      start: "June 2021",
+      end: "May 2023",
       shortDescription: [
-        "Upon graduating in 2021, I began creating content on YouTube, with the aim of enhancing my skills and working with the latest technologies, specifically React and Node.",
-        "Over time, I have developed and shared over 50 projects using React on my channel.",
-        "As a result, my channel has gained a substantial following, with over 11,000 subscribers to date. I have also had the pleasure of collaborating with various brands throughout my journey.",
+        "Played a key role in ensuring the smooth operation of warehouse ativities, managing various aspects to maintain high productivity levels.",
+        "Preparation of customer orders quickly and accurately, ensuring they met promised delivery times for customers.",
+        "Managed inventory and stock levels effectively, ensuring sufficient supply to meet customer demands and operational needs.",
+        "Kept inventory discrepancies to a minimum while maintaining high accuracy levels.",
+        "Worked closely with the customer service team to efficiently resolve customer enquiries.",
       ],
     },
     {
-      name: "ACES",
-      role: "President",
-      url: "https://www.linkedin.com/company/association-of-computer-engineering-students/",
-      start: "November 2019",
+      name: "Aarti",
+      role: "Mechanical Design Engineer",
+      url: "https://www.aarti-industries.com/",
+      start: "September 2019",
       end: "November 2020",
       shortDescription: [
-        "As the elected President of the ACES Departmental Club, I successfully led a team of board members and executive committee members to organize and execute multiple events throughout the year.",
-        "Additionally, I secured sponsorships from reputable brands to support our events.",
-        "Overall, it was a rewarding experience that allowed me to develop my leadership skills while contributing positively to the growth of the organization.",
+        "Mechanical design of static equipment (ASME Section VIII Div.1, TEMA, API 650) and boilers (IBR Code) using PVElite, Compress, and SEG software.",
+        "Prepared mechanical datasheets, design specifications, and PVElite reports. Coordinate with draughtsman for GA drawings and created 2D/3D CAD models and drafts in SolidWorks.",
+        "Reviewed vendor drawings, attended technical meetings, resolved technical queries, and coordinated with various engineering disciplines for project integration.",
+        'Led a team to inventory unused equipment, contributing to future project efficiency, and received an "Exceed Expectations" rating for outstanding performance.',
       ],
     },
     {
-      name: "ISTE",
-      role: "Web Developer",
-      url: "https://www.linkedin.com/company/association-of-computer-engineering-students/",
-      start: "November 2019",
-      end: "November 2020",
+      name: "Heatex",
+      role: "Senior Mechanical Design Engineer",
+      url: "https://www.heatexindustries.com/",
+      start: "September  2015",
+      end: "September  2019",
       shortDescription: [
-        "Write modern, performant, maintainable code for a diverse array of client and internal projects",
-        "Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify",
-        "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
+        "Lead a team in developing detailed designs for various boilers and pressure vessels, ensuring compliance with IBR, BS 2790, and ASME codes.",
+        "Reviewed design drawings for accuracy and compliance, covering both pressure and non-pressure parts of boilers and auxiliary equipment.",
+        "Create 3D and 2D models, technical specifications, material forecasts, BoMs, DCNs, and DCRs using Solidworks and AutoCAD.",
+        "Coordinate with departments, verify welding details, prepare layout arrangements, and incorporate site feedback into designs.",
       ],
     },
     {
-      name: "Shashaan",
-      role: "Founder",
-      url: "https://www.linkedin.com/company/association-of-computer-engineering-students/",
-      start: "November 2018",
-      end: "November 2021",
+      name: "IPR",
+      role: "Trainee Design Engineer",
+      url: "http://www.ipr.res.in/",
+      start: "May 2014",
+      end: "May 2015",
       shortDescription: [
-        "While still a student, I founded a web hosting company that offered affordable hosting services.",
-        "With over 300 customers, the business thrived until I graduated and sold it to another company.",
+        "Designed and developed a Piping Layout with valves of the Compressor and Oil Removal System System(CORS). ",
+        "Carried out the valve sizing for the valves located in the CORS.",
+        "Carried out the static and dynamic analysis of piping in the CAESAR-II software.",
       ],
     },
   ];
+
   return (
     <motion.div
       className="experience"
@@ -144,12 +122,18 @@ function Experience() {
           <div className="exp-details-position">
             <h3>
               <span>{expereinces[selected].role}</span>
-              <span className="exp-details-position-company">
-                &nbsp;@&nbsp;
-                <Link href={expereinces[selected].url} className="link">
-                  {expereinces[selected].name}
-                </Link>
-              </span>
+              {expereinces[selected].name !== "Freelance" && (
+                <span className="exp-details-position-company">
+                  &nbsp;@&nbsp;
+                  <Link
+                    href={expereinces[selected].url}
+                    className="link"
+                    target="_blank"
+                  >
+                    {expereinces[selected].name}
+                  </Link>
+                </span>
+              )}
             </h3>
             <p className="exp-details-range">
               {expereinces[selected].start} - {expereinces[selected].end}

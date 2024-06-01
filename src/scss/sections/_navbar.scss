@@ -37,7 +37,13 @@ nav {
       justify-content: center;
       align-items: center;
       transition: 0.3s ease-in-out;
-      z-index: 15;
+      z-index: 3000;
+      cursor: pointer;
+
+      .closeIcon {
+        position: fixed;
+        right: 2rem;
+      }
     }
     .nav-items {
       display: flex;
@@ -78,7 +84,6 @@ nav {
       padding: 0 2rem;
       .nav-responsive-toggle {
         display: flex;
-        z-index: 15;
       }
 
       .nav-items {
@@ -105,6 +110,7 @@ nav {
         width: min(75vw, 400px);
         visibility: visible;
         opacity: 1;
+        z-index: 2000;
       }
     }
   }

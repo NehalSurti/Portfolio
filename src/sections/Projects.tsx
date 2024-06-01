@@ -11,97 +11,93 @@ function Projects() {
   const projectsData = [
     {
       image: "/project1.png",
-      projectName: "Pokedex",
-      projectLink: "https://netlify.com",
+      projectName: "Ecommerce App",
+      projectLink:
+        "https://ecommerce-git-main-nehal-surtis-projects.vercel.app",
       projectDescription:
-        "This is a web application that uses the PokeAPI to display information about different Pokemon, including their evolution levels and details. You can compare multiple Pokemon using a queue, and add them to your personal list using Firebase's Firestore database.",
+        "Ecommerce web application using React, Node.js, MongoDB, and Stripe for payments.",
       projectTech: [
         "React",
+        "React-Redux",
         "Redux Toolkit",
-        "SCSS",
+        "Node.js",
+        "Express",
+        "Stripe",
+        "Styled Components",
         "Firebase",
-        "Typescript",
-        "PokeApi",
+        "MongoDB Atlas",
+        "Vercel",
       ],
       projectExternalLinks: {
-        github: "",
-        externalLink: "",
+        github: "https://github.com/NehalSurti/Ecommerce-Server",
+        externalLink:
+          "https://ecommerce-git-main-nehal-surtis-projects.vercel.app",
       },
     },
     {
       image: "/project2.png",
-      projectName: "Realtime Chat App",
-      projectLink: "https://netlify.com",
+      projectName: "Ecommerce Admin App",
+      projectLink:
+        "https://ecommerce-git-main-nehal-surtis-projects.vercel.app/admin/",
       projectDescription:
-        "This is a chat app made with React and Node.js that sends real-time messages and is highly scalable. It uses advanced JavaScript concepts like debouncing and is optimized for React. It has 300+ stars on GitHub and over 180k views on YouTube.",
+        "Application designed for managing user and product data for Ecommerce Website. It includes user and product lists, data grids, and forms for data addition and updates.",
       projectTech: [
         "React",
-        "Sockets",
+        "React-Redux",
+        "Redux Toolkit",
+        "Material UI",
+        "Recharts",
         "Node.js",
         "Express",
-        "MongoDB",
-        "Styled Components",
+        "Firebase",
+        "MongoDB Atlas",
+        "Vercel",
       ],
       projectExternalLinks: {
-        github: "",
-        externalLink: "",
+        github: "https://github.com/NehalSurti/Ecommerce-Admin",
+        externalLink:
+          "https://ecommerce-git-main-nehal-surtis-projects.vercel.app/admin/",
       },
     },
     {
       image: "/project3.png",
-      projectName: "Netflix App",
-      projectLink: "https://netlify.com",
+      projectName: "Realtime Chat App",
+      projectLink: "https://chatapp-lime-one.vercel.app/",
       projectDescription:
-        "I made a Netflix copy with TMBD Api. It has infinite scrolling and lets you watch movies by genre. You can also add movies to your favorites list.",
+        "Chat app made with React and Node.js that sends real-time messages and is highly scalable. It uses advanced JavaScript concepts like debouncing and is optimized for React.",
       projectTech: [
         "React",
+        "Styled Components",
+        "Sockets",
         "Node.js",
-        "Firebase",
-        "MongoDB",
         "Express",
-        "Redux Toolkit",
+        "MongoDB",
       ],
       projectExternalLinks: {
-        github: "",
-        externalLink: "",
+        github: "https://github.com/NehalSurti/Chat-App-MERN",
+        externalLink: "https://chatapp-lime-one.vercel.app/",
+      },
+    },
+    {
+      image: "/project4.png",
+      projectName: "TechWeb",
+      projectLink: "https://tech-web-liard.vercel.app/",
+      projectDescription:
+        "The Next.js-built consultant agency website has NextAuth-powered authentication and reliable MongoDB data storage for user and post data.",
+      projectTech: ["Next.js", "MongoDB", "NextAuth", "Vercel"],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/TechWeb-Next.js",
+        externalLink: "https://tech-web-liard.vercel.app/",
       },
     },
   ];
-
-  // useEffect(() => {
-  //   // Check if URL contains a hash (#) and scroll to the target element
-  //   // if (window.location.hash) {
-  //   //   const element = document.querySelector(window.location.hash);
-  //   //   if (element) {
-  //   //     element.scrollIntoView({ behavior: 'smooth' });
-  //   //   }
-  //   // }
-  //   const navbarHeight = 80;
-  //     const hash = window.location.hash.split('#')[1];
-  //     console.log("hash",hash);
-  //     if (hash === 'work') {
-  //       const element = document.getElementById(hash);
-  //       console.log("element:",element);
-  //       if (element) {
-  //         console.log("element.offsetTop : ",element.offsetTop);
-  //         console.log("navbarHeight :",navbarHeight);
-  //         // window.scrollBy(0, 100);
-  //         const offset = element.offsetTop - 250;
-  //         window.scrollTo({ top: offset, behavior: 'smooth'});
-          
-  //         // element.style.transform = "translateX(80px) !important"
-  //         // element?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-  //         // element.scrollTop += -120;
-  //       }
-  //     }
-  // }, [window.location.hash, isInView]);
 
   useEffect(() => {
     console.log("Element is in view: ", isInView);
   }, [isInView]);
 
   return (
-    <div className="projects"  ref={ref}>
+    <div className="projects" ref={ref}>
       <motion.div
         className="title"
         id="work"
@@ -146,41 +142,54 @@ function Projects() {
                   </div>
                 </div>
                 <div className="project-info">
-                  <p className="project-info-overline">Featured Project</p>
-                  <h3 className="project-info-title">{projectName}</h3>
-                  <div className="project-info-description">
-                    <p>{projectDescription}</p>
+                  <div className="project-info-top">
+                    <p className="project-info-overline">Featured Project</p>
+                    <h3 className="project-info-title">{projectName}</h3>
+                    <div className="project-info-description">
+                      <p>{projectDescription}</p>
+                    </div>
+                    <ul className="project-info-tech-list">
+                      {projectTech.map((tech) => (
+                        <li className="project-info-tech-list-item" key={tech}>
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="project-info-tech-list">
-                    {projectTech.map((tech) => (
-                      <li className="project-info-tech-list-item" key={tech}>
-                        {tech}
+                  <div className="project-info-bottom">
+                    <ul className="project-info-links">
+                      <li className="project-info-links-item">
+                        <Link
+                          href={projectExternalLinks.github}
+                          className="project-info-links-item-link"
+                          target="_blank"
+                        >
+                          <FiGithub />
+                        </Link>
                       </li>
-                    ))}
-                  </ul>
-                  <ul className="project-info-links">
-                    <li className="project-info-links-item">
-                      <Link
-                        href={projectExternalLinks.github}
-                        className="project-info-links-item-link"
-                      >
-                        <FiGithub />
-                      </Link>
-                    </li>
-                    <li className="project-info-links-item">
-                      <Link
-                        href={projectExternalLinks.externalLink}
-                        className="project-info-links-item-link"
-                      >
-                        <FiExternalLink />
-                      </Link>
-                    </li>
-                  </ul>
+                      <li className="project-info-links-item">
+                        <Link
+                          href={projectExternalLinks.externalLink}
+                          className="project-info-links-item-link"
+                          target="_blank"
+                        >
+                          <FiExternalLink />
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             );
           }
         )}
+      </div>
+      <div className="projects-showProjects">
+        <Link href="/projects" target="_blank">
+          <button className="projects-showProjects-button">
+            Show More Projects
+          </button>
+        </Link>
       </div>
     </div>
   );
