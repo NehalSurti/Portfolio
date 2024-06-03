@@ -8,9 +8,6 @@ import Head from "next/head";
 export default function Home() {
   return (
     <main>
-      <Head>
-        <title>Nehal Surti</title>
-      </Head>
       <Hero></Hero>
       <About></About>
       <Experience></Experience>

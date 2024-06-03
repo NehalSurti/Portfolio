@@ -1,12 +1,10 @@
-"use client";
 import "@/scss/index.scss";
 import Navbar from "@/sections/Navbar";
 import SocialIcons from "@/components/SocialIcons";
 import Email from "@/components/Email";
 import { Raleway, Fira_Code } from "next/font/google";
-import { useState } from "react";
-import Loader from "@/components/Loader";
 import BackToTopButton from "@/components/BackToTopButton";
+import LoaderWrapper from "@/components/LoaderWrapper";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -18,35 +16,30 @@ const firaCode = Fira_Code({
   variable: "--fira-code",
 });
 
+export const metadata = {
+  title: {
+    default: "Nehal Surti",
+    template: "Nehal Surti | %s",
+  },
+  description: "Nehal Surti Portfolio",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
-
-  const handleLoaderLoaded = () => {
-    setIsLoading(false);
-    setTimeout(() => setShowContent(true), 450);
-  };
-
   return (
     <html lang="en" className={`${raleway.variable} ${firaCode.variable}`}>
       <body>
         <div className="webpageContainer">
-          {isLoading && (
-            <Loader isLoading={isLoading} setIsLoading={handleLoaderLoaded} />
-          )}
-          {showContent && (
-            <>
-              <Navbar></Navbar>
-              <SocialIcons></SocialIcons>
-              {children}
-              <Email></Email>
-              <BackToTopButton></BackToTopButton>
-            </>
-          )}
+          <LoaderWrapper>
+            <Navbar></Navbar>
+            <SocialIcons></SocialIcons>
+            {children}
+            <Email></Email>
+            <BackToTopButton></BackToTopButton>
+          </LoaderWrapper>
         </div>
       </body>
     </html>
