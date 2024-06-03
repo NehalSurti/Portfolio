@@ -52,10 +52,10 @@ function Hero() {
           delay: 1.35,
         }}
       >
-        I'm a passionate web developer specializing in interactive and
+        I&apos;m a passionate web developer specializing in interactive and
         responsive websites. I focus on creating intuitive, user-friendly
         experiences and love using the latest technologies to solve real-world
-        problems. 
+        problems.
       </motion.p>
     </div>
   );

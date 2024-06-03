@@ -25,7 +25,7 @@ function Contact() {
       <p className="contact-text">
         I am currently seeking new opportunities and would love to hear from
         you. Whether you have a question, a project idea, or just want to say
-        hello, feel free to reach out. I'll do my best to respond promptly!
+        hello, feel free to reach out. I&apos;ll do my best to respond promptly!
       </p>
       <div className="contact-cta">
         <Button link="mailto:nehalsurti9998@gmail.com" text="Say Hello" />
