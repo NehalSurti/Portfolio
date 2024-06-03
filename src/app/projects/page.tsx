@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 function Productspage() {
   const projectsData = [
@@ -256,6 +257,9 @@ function Productspage() {
 
   return (
     <main>
+      <Head>
+        <title>Nehal Surti | Projects</title>
+      </Head>
       <div className="projectspage">
         <h1>Projects</h1>
         <motion.ul
