@@ -8,10 +8,11 @@ const variants = {
 
 const TabButton = ({ active, selectTab, children }) => {
   return (
-    <button className="tabbutton" onClick={selectTab}>
-      <p className={`tabbuttontitle ${active ? "buttonActiveClass" : ""}`}>
-        {children}
-      </p>
+    <button
+      className={`tabbutton ${active ? "buttonActiveClass" : ""}`}
+      onClick={selectTab}
+    >
+      <p className={`tabbuttontitle`}>{children}</p>
       <motion.div
         animate={active ? "active" : "default"}
         variants={variants}

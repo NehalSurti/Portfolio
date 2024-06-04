@@ -11,6 +11,14 @@
   background-color: transparent;
   border: none;
 
+  &.buttonActiveClass {
+    background-color: var(--light-navy);
+
+    .tabbuttontitle {
+      color: var(--theme-color);
+    }
+  }
+
   &:hover {
     background-color: var(--light-navy);
 
@@ -23,9 +31,6 @@
     color: var(--slate);
     font-family: var(--fira-code);
     font-size: var(--tsm1);
-    &.buttonActiveClass {
-      color: var(--theme-color);
-    }
   }
 
   .tabbuttonunderline {
