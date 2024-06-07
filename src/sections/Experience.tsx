@@ -37,7 +37,7 @@ function Experience() {
       start: "June 2021",
       end: "May 2023",
       shortDescription: [
-        "Played a key role in ensuring the smooth operation of warehouse ativities, managing various aspects to maintain high productivity levels.",
+        "Played a key role in ensuring the smooth operation of warehouse activities, managing various aspects to maintain high productivity levels.",
         "Preparation of customer orders quickly and accurately, ensuring they met promised delivery times for customers.",
         "Managed inventory and stock levels effectively, ensuring sufficient supply to meet customer demands and operational needs.",
         "Kept inventory discrepancies to a minimum while maintaining high accuracy levels.",
@@ -66,7 +66,7 @@ function Experience() {
       shortDescription: [
         "Lead a team in developing detailed designs for various boilers and pressure vessels, ensuring compliance with IBR, BS 2790, and ASME codes.",
         "Reviewed design drawings for accuracy and compliance, covering both pressure and non-pressure parts of boilers and auxiliary equipment.",
-        "Create 3D and 2D models, technical specifications, material forecasts, BoMs, DCNs, and DCRs using Solidworks and AutoCAD.",
+        "Create 3D and 2D models, technical specifications, material forecasts, BOMs, DCNs, and DCRs using SolidWorks and AutoCAD.",
         "Coordinate with departments, verify welding details, prepare layout arrangements, and incorporate site feedback into designs.",
       ],
     },
@@ -77,7 +77,7 @@ function Experience() {
       start: "May 2014",
       end: "May 2015",
       shortDescription: [
-        "Designed and developed a Piping Layout with valves of the Compressor and Oil Removal System System(CORS). ",
+        "Designed and developed a Piping Layout with valves of the Compressor and Oil Removal System(CORS). ",
         "Carried out the valve sizing for the valves located in the CORS.",
         "Carried out the static and dynamic analysis of piping in the CAESAR-II software.",
       ],
