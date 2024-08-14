@@ -20,6 +20,30 @@ function ProjectsList() {
       },
     },
     {
+      image: "/project18.png",
+      projectName: "Smart Brain - Face Detection App",
+      projectLink: "https://smart-brain-nu-seven.vercel.app/",
+      projectDescription:
+        "A face recognition web application that leverages the Clarifai Face Detection API to identify and highlight face in an image submitted via URL.",
+      projectTech: [
+        "React",
+        "Styled Components",
+        "React Testing Library",
+        "Node.js",
+        "Express",
+        "Clarifai API",
+        "PostgreSQL",
+        "Prisma",
+        "Supabase",
+        "yup",
+        "Vercel",
+      ],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/SmartBrain-Server",
+        externalLink: "https://smart-brain-nu-seven.vercel.app/",
+      },
+    },
+    {
       image: "/project6.png",
       projectName: "Notes App",
       projectLink: "https://notes-app-peach-one.vercel.app/",
@@ -28,7 +52,7 @@ function ProjectsList() {
       projectTech: [
         "React",
         "Typescript",
-        "Node",
+        "Node.js",
         "Express",
         "Mongoose",
         "MongoDB Atlas",
@@ -163,18 +187,6 @@ function ProjectsList() {
       projectExternalLinks: {
         github: "https://github.com/NehalSurti/Pomodoro-Timer",
         externalLink: "https://nehalsurti.github.io/Pomodoro-Timer/",
-      },
-    },
-    {
-      image: "/project17.png",
-      projectName: "Stopwatch",
-      projectLink: "https://nehalsurti.github.io/Stopwatch/",
-      projectDescription:
-        "Countdown timer for the New Year's countdown of 2025 generates numbers dynamically and pulls the current date and time from the user's device using JavaScript.",
-      projectTech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Stopwatch",
-        externalLink: "https://nehalsurti.github.io/Stopwatch/",
       },
     },
   ];
