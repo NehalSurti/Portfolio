@@ -18,16 +18,17 @@ function Experience() {
 
   const expereinces = [
     {
-      name: "Freelance",
-      role: "Full Stack Developer",
-      url: "",
+      name: "ThreeMartians",
+      role: "Web Developer",
+      url: "https://threemartians.com/",
       start: "December 2023",
-      end: "Present",
+      end: "December 2024",
       shortDescription: [
-        "Specializing in web development using MERN Stack, I create dynamic and responsive websites tailored to client needs.",
-        "Experienced in developing and maintaining projects from inception to deployment, ensuring high-quality and scalable solutions.",
-        "Collaborate closely with clients to understand their vision and deliver custom web applications that not only meet but exceed their expectations.",
-        "Proficient in integrating a variety of technologies, optimizing performance, and delivering seamless user experiences across all devices.",
+        "Developed and maintained dynamic and scalable web applications using React, Next.js, and TypeScript.",
+        "Managed state efficiently with Redux Toolkit, improving application performance and scalability.",
+        "Collaborated with UI/UX designers to translate Figma designs into frontend components.",
+        "Wrote unit tests using Jest and React Testing Library, ensuring component reliability and reducing production bugs.",
+        "Collaborated with developers to enhance application features and maintain code quality.",
       ],
     },
     {
@@ -37,11 +38,8 @@ function Experience() {
       start: "June 2021",
       end: "May 2023",
       shortDescription: [
-        "Played a key role in ensuring the smooth operation of warehouse activities, managing various aspects to maintain high productivity levels.",
-        "Preparation of customer orders quickly and accurately, ensuring they met promised delivery times for customers.",
-        "Managed inventory and stock levels effectively, ensuring sufficient supply to meet customer demands and operational needs.",
-        "Kept inventory discrepancies to a minimum while maintaining high accuracy levels.",
-        "Worked closely with the customer service team to efficiently resolve customer enquiries.",
+        "Managed warehouse operations, inventory, and customer orders to ensure timely deliveries.",
+        "Collaborated with customer service teams to resolve inquiries efficiently.",
       ],
     },
     {
