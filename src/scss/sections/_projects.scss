@@ -81,6 +81,9 @@
           display: flex;
           flex-direction: column;
           row-gap: 2px;
+          a {
+            text-decoration: none;
+          }
         }
         &-bottom {
           display: flex;

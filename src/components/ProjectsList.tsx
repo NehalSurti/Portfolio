@@ -8,6 +8,25 @@ import { motion } from "framer-motion";
 function ProjectsList() {
   const projectsData = [
     {
+      image: "/project3.png",
+      projectName: "Realtime Chat App",
+      projectLink: "https://chatapp-lime-one.vercel.app/",
+      projectDescription:
+        "Chat app made with React and Node.js that sends real-time messages and is highly scalable. It uses advanced JavaScript concepts like debouncing and is optimized for React.",
+      projectTech: [
+        "React",
+        "Styled Components",
+        "Sockets",
+        "Node.js",
+        "Express",
+        "MongoDB",
+      ],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/Chat-App-MERN",
+        externalLink: "https://chatapp-lime-one.vercel.app/",
+      },
+    },
+    {
       image: "/project5.png",
       projectName: "Worthwhile Fintech",
       projectLink: "https://worthwhilefintech.com/",

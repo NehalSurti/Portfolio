@@ -10,6 +10,30 @@ function Projects() {
   const isInView = useInView(ref);
   const projectsData = [
     {
+      image: "/project19.png",
+      projectName: "Sommaire – AI PDF Summaries",
+      projectLink: "https://sommaire-five.vercel.app/",
+      projectDescription:
+        "AI-powered SaaS that converts PDFs into concise summaries and reels using LangChain and Gemini. Includes secure uploads, Clerk auth, Stripe billing, and a scalable Neon DB backend.",
+      projectTech: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Clerk",
+        "AWS S3",
+        "LangChain",
+        "Gemini API",
+        "Neon DB (PostgreSQL)",
+        "Stripe",
+        "Vercel",
+        "Framer Motion",
+      ],
+      projectExternalLinks: {
+        github: "https://github.com/NehalSurti/Sommaire",
+        externalLink: "https://sommaire-five.vercel.app/",
+      },
+    },
+    {
       image: "/project1.png",
       projectName: "Ecommerce App",
       projectLink:
@@ -57,25 +81,6 @@ function Projects() {
         github: "https://github.com/NehalSurti/Ecommerce-Admin",
         externalLink:
           "https://ecommerce-git-main-nehal-surtis-projects.vercel.app/admin/",
-      },
-    },
-    {
-      image: "/project3.png",
-      projectName: "Realtime Chat App",
-      projectLink: "https://chatapp-lime-one.vercel.app/",
-      projectDescription:
-        "Chat app made with React and Node.js that sends real-time messages and is highly scalable. It uses advanced JavaScript concepts like debouncing and is optimized for React.",
-      projectTech: [
-        "React",
-        "Styled Components",
-        "Sockets",
-        "Node.js",
-        "Express",
-        "MongoDB",
-      ],
-      projectExternalLinks: {
-        github: "https://github.com/NehalSurti/Chat-App-MERN",
-        externalLink: "https://chatapp-lime-one.vercel.app/",
       },
     },
     {
@@ -144,7 +149,9 @@ function Projects() {
                 <div className="project-info">
                   <div className="project-info-top">
                     <p className="project-info-overline">Featured Project</p>
-                    <h3 className="project-info-title">{projectName}</h3>
+                    <Link href={projectLink} target="_blank">
+                      <h3 className="project-info-title">{projectName}</h3>
+                    </Link>
                     <div className="project-info-description">
                       <p>{projectDescription}</p>
                     </div>
