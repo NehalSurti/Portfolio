@@ -22,7 +22,7 @@ function Experience() {
       role: "Web Developer",
       url: "https://threemartians.com/",
       start: "December 2023",
-      end: "December 2024",
+      end: "March 2025",
       shortDescription: [
         "Developed and maintained dynamic and scalable web applications using React, Next.js, and TypeScript.",
         "Managed state efficiently with Redux Toolkit, improving application performance and scalability.",
@@ -142,7 +142,7 @@ function Experience() {
                   <li key={index} className="exp-details-list-item">
                     {description}
                   </li>
-                )
+                ),
               )}
             </ul>
           </div>
